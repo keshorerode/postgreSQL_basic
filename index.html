@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Information Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #458cdd;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 190vh;
+      margin: 0;
+    }
+    .container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      width: 100%;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    form {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    label {
+      margin: 10px 0 5px;
+      color: #333;
+      flex-basis: 100%;
+    }
+    input {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      flex: 1;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+    input:last-child {
+      margin-right: 0;
+    }
+    button {
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      background-color: #bd711b;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+      flex-basis: 100%;
+    }
+    button:hover {
+      background-color: #4cae4c;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Add Personal Information</h1>
+    <form action="/add-person" method="post">
+      <label for="first_name">First Name:</label>
+      <input type="text" id="first_name" name="first_name" required>
+      <label for="last_name">Last Name:</label>
+      <input type="text" id="last_name" name="last_name" required>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" required>
+      <button type="submit">Submit</button>
+    </form>
+    
+    <h1>Update Personal Information</h1>
+    <form action="/update-person" method="post">
+      <label for="update_id">ID:</label>
+      <input type="number" id="update_id" name="id" required>
+      <label for="update_first_name">First Name:</label>
+      <input type="text" id="update_first_name" name="first_name">
+      <label for="update_last_name">Last Name:</label>
+      <input type="text" id="update_last_name" name="last_name">
+      <label for="update_email">Email:</label>
+      <input type="email" id="update_email" name="email">
+      <label for="update_age">Age:</label>
+      <input type="number" id="update_age" name="age">
+      <button type="submit">Update</button>
+    </form>
+    
+    <h1>Delete Personal Information</h1>
+    <form action="/delete-person" method="post">
+      <label for="delete_id">ID:</label>
+      <input type="number" id="delete_id" name="id" required>
+      <button type="submit">Delete</button>
+    </form>
+  </div>
+</body>
+</html>
